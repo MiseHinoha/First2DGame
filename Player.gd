@@ -7,7 +7,6 @@ var screen_size
 # 初始化
 func _ready():
 	screen_size = get_viewport_rect().size
-	#hide() # 隐藏这个“节点”
 
 # 移动逻辑
 func movement(delta):
@@ -45,3 +44,14 @@ func movement(delta):
 # 每个delta时间执行一次
 func _process(delta):
 	movement(delta)
+
+
+func _on_body_exited(body):
+	hide()# 隐藏玩家
+	hit.emit()
+	$CollisionShape2D.set_deferred("disabled",true)
+
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
