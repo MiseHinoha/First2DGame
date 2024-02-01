@@ -1,5 +1,4 @@
 extends CanvasLayer
-
 signal start_game
 
 # Called when the node enters the scene tree for the first time.
@@ -40,3 +39,4 @@ func _on_message_timer_timeout():
 func _on_start_button_pressed():
 	$StartButton.hide()
 	start_game.emit()
+
