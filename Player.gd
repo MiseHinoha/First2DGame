@@ -7,6 +7,7 @@ var screen_size
 # 初始化
 func _ready():
 	screen_size = get_viewport_rect().size
+	hide()
 
 # 移动逻辑
 func movement(delta):
